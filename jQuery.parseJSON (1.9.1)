@@ -27,3 +27,10 @@ parseJSON: function( data ) {
 
     jQuery.error( "Invalid JSON: " + data );
 },
+
+
+
+As you can see, jQuery will use the native JSON.parse method if it is available, 
+and otherwise it will try to evaluate the data with new Function, which is kind of like eval.
+
+So yes, you should definitely use jQuery.parseJSON.
