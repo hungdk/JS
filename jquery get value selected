@@ -1,0 +1,17 @@
+ <select id = "mySelect"  name = "taskOption" class="table-group-action-input form-control input-inline input-small input-sm">
+                    <?php 
+                            //echo $dataCity[0];
+                            $i = 0;
+                        foreach ($dataCity as $city){
+                            
+                    ?>
+                            <option name ="citydata" value="city"><?php echo $city ?></option>
+                    
+                    <?php 
+                        $i++;
+                        }
+                    ?>
+                </select>
+                ss
+ 
+ var selectCity = $("#mySelect option:selected").text();
