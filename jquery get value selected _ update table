@@ -1,0 +1,40 @@
+   <select id = "mySelect"  name = "taskOption" class="table-group-action-input form-control input-inline input-small input-sm">
+                    <?php 
+                            $i = 0;
+                        foreach ($dataCity as $data => $value){
+                    ?>
+                            <option name ="citydata" id = '<?php echo $value->id; ?>' value = "city"> <?php echo $value->city ?></option>
+                    
+                    <?php 
+                            $i++;
+                        }
+                    ?>
+   </select>
+ <button onclick="updateTable()" class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> Submit</button>
+
+ 
+ var selectCity = $("#mySelect option:selected").text();
+
+ var selectCity = $("#mySelect option:selected").attr('id');
+
+<script>
+    function updateTable(){
+        var selectCity = $("#mySelect option:selected").attr('id');
+        //alert(selectCity);
+        
+        $.post("http://localhost/botnetmap-customer/fakedata/fakevictim/getbyDepartment",
+            {
+                department : selectCity
+            },
+            function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+                $.each(data, function(index, value){
+                    var row = $("<tr><td>" + value.name + "</td>" + "<td>" + value.victim_type + "</td>" + "<td>" + value.ip_local + "</td>" 
+                    + "<td>" + value.email + "</td>" + "<td>" + value.address + "</td></tr>");
+                    $("#mytable").append(row);
+                });
+            }
+        );
+        
+    }
+</script>
