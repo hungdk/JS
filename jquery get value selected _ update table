@@ -1,3 +1,5 @@
+ $dataCity = [{},{},{}];
+ 
    <select id = "mySelect"  name = "taskOption" class="table-group-action-input form-control input-inline input-small input-sm">
                     <?php 
                             $i = 0;
