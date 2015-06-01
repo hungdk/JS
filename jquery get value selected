@@ -15,3 +15,5 @@
                 ss
  
  var selectCity = $("#mySelect option:selected").text();
+
+ var selectCity = $("#mySelect option:selected").attr('id');
