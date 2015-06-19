@@ -1,0 +1,33 @@
+JS:
+<!-- ideally at the bottom of the page -->
+<!-- also works in the <head> -->
+<script src="PATH_TO_FILE/alertify.min.js"></script>
+
+CSS:
+<!-- include the core styles -->
+<link rel="stylesheet" href="PATH_TO_FILE/alertify.css" />
+<!-- include a theme, can be included into the core instead of 2 separate files -->
+<link rel="stylesheet" href="PATH_TO_FILE/alertify.default.css" />
+
+Default Usage:
+// alert dialog
+alertify.alert("Message");
+
+// confirm dialog
+alertify.confirm("Message", function (e) {
+    if (e) {
+        // user clicked "ok"
+    } else {
+        // user clicked "cancel"
+    }
+});
+
+// prompt dialog
+alertify.prompt("Message", function (e, str) {
+    // str is the input text
+    if (e) {
+        // user clicked "ok"
+    } else {
+        // user clicked "cancel"
+    }
+}, "Default Value");
